@@ -15,8 +15,8 @@ for ARG in "$@"; do
       DO_PREVIEW=false
       ;;
     *)
-      echo ">> Usage: $0 [--no-preview] [--no-reboot] [--ignore-wrong-attr]"
       if [[ "$IGNORE_WRONG_ATTR" == false ]]; then
+          echo ">> Usage: $0 [--no-preview] [--no-reboot] [--ignore-wrong-attr]"
           exit 1
       fi
       ;;
