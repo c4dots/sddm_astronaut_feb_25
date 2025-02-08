@@ -2,18 +2,23 @@
 
 DO_REBOOT=true
 DO_PREVIEW=true
+IGNORE_WRONG_ATTR=false
 for ARG in "$@"; do
   case $ARG in
     --no-reboot)
       DO_REBOOT=false
       ;;
-    *)
-  case $ARG in
+    --ignore-wrong-attr)
+      IGNORE_WRONG_ATTR=true
+      ;;
     --no-preview)
       DO_PREVIEW=false
       ;;
     *)
-      
+      echo ">> Usage: $0 [--no-preview] [--no-reboot] [--ignore-wrong-attr]"
+      if [[ "$IGNORE_WRONG_ATTR" == false ]]; then
+          exit 1
+      fi
       ;;
   esac
 done
