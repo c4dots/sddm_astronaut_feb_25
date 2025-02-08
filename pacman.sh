@@ -8,7 +8,6 @@ for ARG in "$@"; do
       ;;
     *)
       echo ">> Usage: $0 [--no-reboot]"
-      exit 1
       ;;
   esac
 done
