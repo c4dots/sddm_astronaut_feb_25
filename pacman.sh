@@ -1,7 +1,5 @@
 #!/bin/bash
 
-cd ~
-
 DO_REBOOT=true
 for ARG in "$@"; do
   case $ARG in
@@ -16,15 +14,15 @@ for ARG in "$@"; do
 done
 
 
-sudo pacman -S sddm
+sudo pacman -S sddm --noconfirm
 sudo systemctl disable gdm.service
 sudo systemctl enable sddm.service
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/keyitdev/sddm-astronaut-theme/master/setup.sh)"
 
-sudo rm -R sddm-astronaut-theme*
+sudo rm -R ~/sddm-astronaut-theme*
 
-read -p "Do you wish to reboot now? (y/n): " re
 if [[ "$DO_REBOOT" == true ]]; then
+    read -p "Do you wish to reboot now? (y/n): " re
     if [[ "$re" == "y" ]]; then
         sudo reboot now
     fi
