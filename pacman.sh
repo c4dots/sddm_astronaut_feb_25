@@ -7,7 +7,7 @@ for ARG in "$@"; do
       DO_REBOOT=false
       ;;
     *)
-      echo ">> Usage: $0 [--no-reboot]"
+      
       ;;
   esac
 done
