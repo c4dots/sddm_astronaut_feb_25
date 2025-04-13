@@ -1,5 +1,5 @@
 #!/bin/bash
-
+sudo -Sv
 DO_REBOOT=true
 DO_PREVIEW=true
 for ARG in "$@"; do
